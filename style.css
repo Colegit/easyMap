@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+html,
+body,
+#leaflet {
+  height: 100%;
+}
+
+/* change cursor to regular pointer */
+.leaflet-grab {
+  cursor: auto;
+}
+.leaflet-dragging .leaflet-grab {
+  cursor: move;
+}
+
+/* Close button on the sidebar panel */
+.closeButton {
+  float: right;
+}

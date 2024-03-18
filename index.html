@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="tabTitle"></title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-sidebar@0.2.0/src/L.Control.Sidebar.css"
+    />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <script src="config.js"></script>
+    <script src="getHashtag.js"></script>
+
+    <div id="leaflet"></div>
+    <div id="sidebar"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/leaflet-sidebar@0.2.0/src/L.Control.Sidebar.js"></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script
+      src="https://unpkg.com/esri-leaflet@3.0.7/dist/esri-leaflet.js"
+      integrity="sha512-ciMHuVIB6ijbjTyEdmy1lfLtBwt0tEHZGhKVXDzW7v7hXOe+Fo3UA1zfydjCLZ0/vLacHkwSARXB5DmtNaoL/g=="
+      crossorigin=""
+    ></script>
+
+    <div id="leaflet" style="height: 400px"></div>
+
+    <!-- Other body content -->
+    <script>
+      // Initialize Leaflet map
+      var map = L.map("leaflet").setView([51.505, -0.09], 13);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      const hashtag = getHashtag();
+
+      const tabTitle = document.getElementById("tabTitle");
+      const titleDesc = document.getElementById("titleDesc");
+
+      // Set the text to what is in the config file
+      tabTitle.textContent = pageConfigs[hashtag].title;
+      console.log(pageConfigs[hashtag].title);
+      //titleDesc.textContent = config.text.titleDesc;
+    </script>
+  </body>
+</html>
