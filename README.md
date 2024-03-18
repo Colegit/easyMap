@@ -1,6 +1,6 @@
 ## Introduction
 
-This project was created to solve 3 core issues I have seen within GIS:
+This project was created to solve 3 core issues within GIS:
 
 1) Geocortex and Esri products cost 15k or more yearly to run. For small municipalities or businesses, this is often not feasable. Especially when all thats really needed is a simple web map that can display GIS data and each object's attributes, with a few basic tools to navigate around.
 
