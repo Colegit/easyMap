@@ -32,6 +32,18 @@ const pageConfigs = {
     displayTermConditions: false,
     termsAndConditionsTitle: "Terms and Conditions",
     termsAndConditionsDesc: "",
+    bookmarks: {
+      0: {
+        bookmarkTitle: "Doe Creek Wildfire",
+        location: [-120.2123, 54.2314],
+        zoom: 14,
+      },
+      1: {
+        bookmarkTitle: "Dawson Creek Wildfire",
+        location: [-120.2123, 54.2314],
+        zoom: 14,
+      },
+    },
   },
   //
   //
