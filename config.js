@@ -8,9 +8,14 @@ pageEnum = {
 };
 
 /**
- * Define configurations for each hashtag
+ * Grab the hashtag passed into the url if there is one
  */
-const pageConfigs = {
+const hashtag = getHashtag();
+
+/**
+ * Define configurations for each hashtag. Undefined is the default
+ */
+const config = {
   //
   //
   [pageEnum.wildfires]: {
@@ -23,7 +28,7 @@ const pageConfigs = {
       perimeter:
         "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
     },
-    mapCenter: [-120.1234, 54.1234],
+    mapCenter: [53.910704, -122.7819],
     initialZoom: 14,
     bannerColor: "#Fae11",
     textColor: "#FF0000",
@@ -79,8 +84,8 @@ const pageConfigs = {
       perimeter:
         "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
     },
-    mapCenter: [-120.1234, 54.1234],
-    initialZoom: 14,
+    mapCenter: [53.910704, -122.7819],
+    initialZoom: 12,
     bannerColor: "#Fae11",
     textColor: "#FF0000",
     logo: "/assets/logo.png",
