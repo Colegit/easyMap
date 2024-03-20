@@ -21,15 +21,23 @@ const config = {
   [pageEnum.wildfires]: {
     title: "Wildfires",
     restEndpoints: {
-      streets:
-        "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
-      parcels:
-        "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
-      perimeter:
-        "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
+      esriFeatureLayers: {
+        firePerimeters: {
+          url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
+        },
+        houses: {
+          url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
+        },
+      },
+      esriMapLayers: {
+        summerTrails: {
+          url: "https://geospatial.alberta.ca/titan/rest/services/boundary/trails/MapServer",
+          layers: [0, 1],
+        },
+      },
     },
     mapCenter: [53.910704, -122.7819],
-    initialZoom: 14,
+    initialZoom: 6,
     bannerColor: "#Fae11",
     textColor: "#FF0000",
     logo: "/assets/logo.png",
@@ -49,28 +57,6 @@ const config = {
         zoom: 14,
       },
     },
-  },
-  //
-  //
-  [pageEnum.driveInfo]: {
-    title: "Sample City",
-    restEndpoints: {
-      streets:
-        "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
-      parcels:
-        "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
-      perimeter:
-        "https://geo.rdffg.bc.ca/arcgis/rest/services/GEO/civic_address_reporting/MapServer/0/query",
-    },
-    mapCenter: [-120.1234, 54.1234],
-    initialZoom: 14,
-    bannerColor: "#Fae11",
-    textColor: "#FF0000",
-    logo: "/assets/logo.png",
-    favicon: "/assets/logo.png",
-    displayTermConditions: false,
-    termsAndConditionsTitle: "Terms and Conditions",
-    termsAndConditionsDesc: "",
   },
   //
   // This is the default text if no desiredPage/hashtag is passed into the URL

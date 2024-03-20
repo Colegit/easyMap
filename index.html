@@ -22,25 +22,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <style>
-      /* Basic styles for the navbar */
-      .navbar {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-      }
-      /* Styles for the logo */
-      .navbar img {
-        height: 30px; /* Adjust the height as needed */
-        margin-right: 10px;
-      }
-      /* Styles for the heading */
-      .navbar h2 {
-        margin: 0;
-        font-size: 20px;
-        font-weight: bold;
-      }
-    </style>
   </head>
   <body>
     <script src="utils/getHashtag.js"></script>
@@ -60,18 +41,11 @@
 
     <div id="leaflet" style="height: 400px"></div>
 
+    <script src="components/map/esriLayers.js"></script>
+    <script src="components/map/main.js"></script>
+
     <!-- Other body content -->
     <script>
-      // Initialize Leaflet map
-      var map = L.map("leaflet").setView(
-        config[hashtag].mapCenter,
-        config[hashtag].initialZoom
-      );
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-
       const tabTitle = document.getElementById("tabTitle");
       const titleDesc = document.getElementById("titleDesc");
 
