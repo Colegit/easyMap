@@ -21,9 +21,18 @@ const config = {
   [pageEnum.wildfires]: {
     title: "Wildfires",
     restEndpoints: {
+      //https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
       esriFeatureLayers: {
         firePerimeters: {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
+          whereClause: "",
+          style: {
+            color: "#FFFFFF",
+            dashArray: "2, 3",
+            dashOffset: "2",
+            weight: "1.5",
+          },
+          pane: "firePerimeter",
         },
         houses: {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
@@ -31,7 +40,7 @@ const config = {
       },
       esriMapLayers: {
         summerTrails: {
-          url: "https://geospatial.alberta.ca/titan/rest/services/boundary/trails/MapServer",
+          url: "https://geospatial.alberta.ca/titan/rest/services/boundary/trails/MapServer/2/",
           layers: [0, 1],
         },
       },

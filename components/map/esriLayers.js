@@ -5,11 +5,11 @@
 function addEsriLayersToMap(map) {
   const endpoints = config[hashtag].restEndpoints;
 
-  for (const endpointType in endpoints) {
-    const endpoint = endpoints[endpointType];
+  for (const endpointName in endpoints) {
+    const endpoint = endpoints[endpointName];
     const captainKeys = Object.keys(endpoint);
 
-    if (endpointType == "esriFeatureLayers") {
+    if (endpointName == "esriFeatureLayers") {
       captainKeys.forEach((key) => {
         L.esri
           .featureLayer({
@@ -18,13 +18,13 @@ function addEsriLayersToMap(map) {
           .addTo(map);
       });
     }
-    if (endpointType == "esriMapLayers") {
+    if (endpointName == "esriMapLayers") {
       captainKeys.forEach((key) => {
         console.log(endpoint[key].url);
         L.esri
           .dynamicMapLayer({
             url: endpoint[key].url,
-            layer: endpoint[key].layers,
+            layer: [0],
           })
           .addTo(map);
       });
