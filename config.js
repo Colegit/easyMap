@@ -17,27 +17,37 @@ const hashtag = getHashtag();
  */
 const config = {
   //
+  // Wildfires Map
   //
   [pageEnum.wildfires]: {
     title: "Wildfires",
     restEndpoints: {
       //https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
+      //
       esriFeatureLayers: {
         firePerimeters: {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
-          whereClause: "",
+          whereClause: "", // Add any criteria e.g. "OUTOFCONTROL = 'YES'"
+          // As feature layers are not returned with their original styling, we can add their styles here.
           style: {
             color: "#FFFFFF",
             dashArray: "2, 3",
             dashOffset: "2",
             weight: "1.5",
           },
+          //For the side panel the attribute names coming from the featureLayer arent always presentable. This allows you to override them with a better name
+          attributeNameOverrides: {
+            area_name: "Area Name",
+          },
+          // What the feature layer will show when in the toggle layers and legend
+          legendName: "Fire Perimeters",
           pane: "firePerimeter",
         },
         houses: {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
         },
       },
+      //
       esriMapLayers: {
         summerTrails: {
           url: "https://geospatial.alberta.ca/titan/rest/services/boundary/trails/MapServer/2/",
@@ -51,9 +61,6 @@ const config = {
     textColor: "#FF0000",
     logo: "/assets/logo.png",
     favicon: "/assets/logo.png",
-    displayTermConditions: false,
-    termsAndConditionsTitle: "Terms and Conditions",
-    termsAndConditionsDesc: "",
     bookmarks: {
       0: {
         bookmarkTitle: "Doe Creek Wildfire",
