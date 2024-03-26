@@ -22,7 +22,8 @@ const config = {
   [pageEnum.wildfires]: {
     title: "Wildfires",
     restEndpoints: {
-      //https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
+      //
+      // https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
       //
       esriFeatureLayers: {
         firePerimeters: {
@@ -33,8 +34,6 @@ const config = {
           // As feature layers are not returned with their original styling, we can add their styles here.
           style: {
             color: "#FF0000",
-            // dashArray: "2, 3",
-            // dashOffset: "2",
             weight: "1.0",
           },
           //For the side panel the attribute names coming from the featureLayer arent always presentable. This allows you to override them with a better name
@@ -46,6 +45,8 @@ const config = {
         },
         // Add more feature servers as needed
       },
+      //
+      //
       //
       esriMapLayers: {
         albertaRegions: {
