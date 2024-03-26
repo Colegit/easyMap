@@ -46,6 +46,17 @@
 
     <!-- Other body content -->
     <script>
+      // Create a link element
+      const link = document.createElement("link");
+
+      // Add in the favicon determined by which hashtag we are on
+      link.rel = "icon";
+      link.href = config[hashtag].favicon;
+      link.type = "image/x-icon";
+
+      // Append the link element to the head of the document
+      document.head.appendChild(link);
+
       const tabTitle = document.getElementById("tabTitle");
       const titleDesc = document.getElementById("titleDesc");
 

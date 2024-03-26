@@ -11,20 +11,23 @@ function addEsriLayersToMap(map) {
 
     if (endpointName == "esriFeatureLayers") {
       captainKeys.forEach((key) => {
+        const layer = endpoint[key];
         L.esri
           .featureLayer({
-            url: endpoint[key].url,
+            url: layer.url,
+            style: layer.style,
+            where: layer.whereClause,
           })
           .addTo(map);
       });
     }
     if (endpointName == "esriMapLayers") {
       captainKeys.forEach((key) => {
-        console.log(endpoint[key].url);
+        const layer = endpoint[key];
         L.esri
           .dynamicMapLayer({
-            url: endpoint[key].url,
-            layer: [0],
+            url: layer.url,
+            layers: layer.layers,
           })
           .addTo(map);
       });
