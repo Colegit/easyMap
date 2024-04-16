@@ -36,8 +36,8 @@ const config = {
             color: "#FF0000",
             weight: "1.0",
           },
-          //For the side panel the attribute names coming from the featureLayer arent always presentable. This allows you to override them with a better name
-          attributeNameOverrides: {
+          //For the side panel these are the attributes that will be displayed along with their human-readable titles
+          attributes: {
             FIRE_STATUS: "Fire Status",
             FIRE_NUMBER: "Fire Number",
             FIRE_SIZE_HECTARES: "Fire Size in Hectares",

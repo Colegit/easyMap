@@ -12,13 +12,22 @@ function addEsriLayersToMap(map) {
     if (endpointName == "esriFeatureLayers") {
       captainKeys.forEach((key) => {
         const layer = endpoint[key];
-        L.esri
+        const featureLayer = L.esri
           .featureLayer({
             url: layer.url,
             style: layer.style,
             where: layer.whereClause,
           })
           .addTo(map);
+
+        featureLayer.on("click", function (e) {
+          const sidebarData = setSidebarData(
+            e.layer.feature.properties,
+            layer.attributes
+          );
+          console.log(sidebarData);
+          displaySidebar(sidebarData);
+        });
       });
     }
     if (endpointName == "esriMapLayers") {
