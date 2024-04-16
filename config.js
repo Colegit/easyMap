@@ -42,6 +42,9 @@ const config = {
             FIRE_NUMBER: "Fire Number",
             FIRE_SIZE_HECTARES: "Fire Size in Hectares",
           },
+          attributeDetails: {
+            mapAll: true, // set this to false if you only want the attributes you listed within the attributes {} hashmap to display. true will grab all attribute values.
+          },
         },
         // Add more feature servers as needed
       },

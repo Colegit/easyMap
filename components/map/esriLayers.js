@@ -21,11 +21,7 @@ function addEsriLayersToMap(map) {
           .addTo(map);
 
         featureLayer.on("click", function (e) {
-          const sidebarData = setSidebarData(
-            e.layer.feature.properties,
-            layer.attributes
-          );
-          console.log(sidebarData);
+          const sidebarData = setSidebarData(e.layer.feature.properties, layer);
           displaySidebar(sidebarData);
         });
       });
