@@ -47,7 +47,7 @@ const config = {
           },
           featureSelection: {
             selectColor: "yellow", // Determines the color of the feature when clicked
-            mapCenter: false, // Will center the map on the selected feature
+            zoomToFeature: false, // Will zoom to the selected feature when clicked
           },
         },
         // Add more feature servers as needed

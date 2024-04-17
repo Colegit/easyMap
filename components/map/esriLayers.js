@@ -31,10 +31,18 @@ function addEsriLayersToMap(map) {
             map.removeLayer(identifiedFeature);
           }
 
-          // Highlight the clicked feature layer in yellow
+          // Highlight the clicked feature layer in config defined color
           identifiedFeature = L.geoJSON(e.layer.feature, {
             style: { color: layer.featureSelection.selectColor },
           }).addTo(map);
+
+          if (layer.featureSelection.zoomToFeature == true) {
+            if (e.layer.getBounds) {
+              map.fitBounds(e.layer.getBounds());
+            } else if (e.layer.getLatLng) {
+              map.setView(e.layer.getLatLng(), map.getZoom());
+            }
+          }
         });
       });
     }
