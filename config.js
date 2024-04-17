@@ -21,6 +21,11 @@ const config = {
   //
   [pageEnum.wildfires]: {
     title: "Wildfires",
+    mapCenter: [53.910704, -122.7819],
+    initialZoom: 6,
+    bannerColor: "#Fae11",
+    textColor: "#FF0000",
+    favicon: "assets/wildfires.png",
     restEndpoints: {
       //
       // https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
@@ -61,23 +66,6 @@ const config = {
           layers: [0, 1, 2, 3], // Add the layers you want returned back from the map server
         },
         // Add more map servers as needed
-      },
-    },
-    mapCenter: [53.910704, -122.7819],
-    initialZoom: 6,
-    bannerColor: "#Fae11",
-    textColor: "#FF0000",
-    favicon: "assets/wildfires.png",
-    bookmarks: {
-      0: {
-        bookmarkTitle: "Doe Creek Wildfire",
-        location: [-120.2123, 54.2314],
-        zoom: 14,
-      },
-      1: {
-        bookmarkTitle: "Dawson Creek Wildfire",
-        location: [-120.2123, 54.2314],
-        zoom: 14,
       },
     },
   },
