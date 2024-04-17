@@ -10,6 +10,8 @@ function addEsriLayersToMap(map) {
     const captainKeys = Object.keys(endpoint);
 
     if (endpointName == "esriFeatureLayers") {
+      let identifiedFeature;
+
       captainKeys.forEach((key) => {
         const layer = endpoint[key];
         const featureLayer = L.esri
@@ -23,6 +25,16 @@ function addEsriLayersToMap(map) {
         featureLayer.on("click", function (e) {
           const sidebarData = setSidebarData(e.layer.feature.properties, layer);
           displaySidebar(sidebarData);
+
+          // Remove previously identified feature layer
+          if (identifiedFeature) {
+            map.removeLayer(identifiedFeature);
+          }
+
+          // Highlight the clicked feature layer in yellow
+          identifiedFeature = L.geoJSON(e.layer.feature, {
+            style: { color: layer.featureSelection.selectColor },
+          }).addTo(map);
         });
       });
     }

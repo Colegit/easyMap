@@ -36,14 +36,18 @@ const config = {
             color: "#FF0000",
             weight: "1.0",
           },
-          //For the side panel these are the attributes that will be displayed along with their human-readable titles
+          // For the side panel these are the attributes that will be displayed along with their human-readable titles
           attributes: {
             FIRE_STATUS: "Fire Status",
             FIRE_NUMBER: "Fire Number",
             FIRE_SIZE_HECTARES: "Fire Size in Hectares",
           },
           attributeDetails: {
-            mapAll: true, // set this to false if you only want the attributes you listed within the attributes {} hashmap to display. true will grab all attribute values.
+            mapAll: true, // Set this to false if you only want the attributes you listed within the attributes {} hashmap to display. true will grab all attribute values.
+          },
+          featureSelection: {
+            selectColor: "yellow", // Determines the color of the feature when clicked
+            mapCenter: false, // Will center the map on the selected feature
           },
         },
         // Add more feature servers as needed
