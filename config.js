@@ -57,7 +57,7 @@ const config = {
           },
           legendName: "Fire Perimeters", // What the feature layer will show when in the toggle layers and legend
           legendStyle: {
-            // Insert inner HTML style parameters as the value along with their proper css styling parameter names as the key.
+            // Insert CSS styling parameters
             background: "rgba(255, 0, 0, 0.4);",
             border: "1.5px solid red",
           },
