@@ -4,14 +4,15 @@
  */
 function addEsriLayersToMap(map) {
   const endpoints = config[hashtag].restEndpoints;
+  const layers = {};
+  let identifiedFeature;
+  let identifiedFeatureName;
 
   for (const endpointName in endpoints) {
     const endpoint = endpoints[endpointName];
     const captainKeys = Object.keys(endpoint);
 
     if (endpointName == "esriFeatureLayers") {
-      let identifiedFeature;
-
       captainKeys.forEach((key) => {
         const layer = endpoint[key];
         const featureLayer = L.esri
@@ -22,6 +23,9 @@ function addEsriLayersToMap(map) {
           })
           .addTo(map);
 
+        // Add the feature layer to the object with a key
+        layers[layer.legendName] = featureLayer;
+
         featureLayer.on("click", function (e) {
           const sidebarData = setSidebarData(e.layer.feature.properties, layer);
           displaySidebar(sidebarData);
@@ -30,6 +34,9 @@ function addEsriLayersToMap(map) {
           if (identifiedFeature) {
             map.removeLayer(identifiedFeature);
           }
+
+          // Each time a feature is clicked, we want to store which layer currently is highlighted so we can remove the highlight if the layer is turned off in the layer toggle
+          identifiedFeatureName = layer.legendName;
 
           // Highlight the clicked feature layer in config defined color
           identifiedFeature = L.geoJSON(e.layer.feature, {
@@ -58,4 +65,14 @@ function addEsriLayersToMap(map) {
       });
     }
   }
+
+  // Add the control layers to the map with the featureLayers object
+  L.control.layers(null, layers, { position: "bottomright" }).addTo(map);
+
+  map.on("overlayremove", function (eventLayer) {
+    // If the layer name removed from the layer toggle matches the name of the feature that currently has highlighting on it, remove the highlighting
+    if (eventLayer.name == identifiedFeatureName) {
+      map.removeLayer(identifiedFeature);
+    }
+  });
 }

@@ -1,3 +1,4 @@
+// Only show legend if its been turned on within the config file
 if (config[hashtag].legendOn) {
   var legend = L.control({ position: "topright" });
 
