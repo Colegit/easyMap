@@ -26,6 +26,7 @@ const config = {
     bannerColor: "#Fae11",
     textColor: "#FF0000",
     favicon: "assets/wildfires.png",
+    legendTitle: "Legend",
     restEndpoints: {
       //
       // https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
@@ -36,7 +37,7 @@ const config = {
           whereClause: "FIRE_SIZE_HECTARES > 10000", // Add any criteria e.g. "FIRE_SIZE_HECTARES > 10000"
           legendName: "Fire Perimeters", // What the feature layer will show when in the toggle layers and legend
 
-          // As feature layers are not returned with their original styling, we can add their styles here.
+          // As feature layers are not returned with their original styling, we can add their styles here. This will also be what displays in the legend.
           style: {
             color: "#FF0000",
             weight: "1.0",
