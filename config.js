@@ -27,6 +27,7 @@ const config = {
     textColor: "#FF0000",
     favicon: "assets/wildfires.png",
     legendTitle: "Legend",
+    legendOn: true, // Turn legend on or off
     restEndpoints: {
       //
       // https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
@@ -35,7 +36,6 @@ const config = {
         firePerimeters: {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
           whereClause: "FIRE_SIZE_HECTARES > 10000", // Add any criteria e.g. "FIRE_SIZE_HECTARES > 10000"
-          legendName: "Fire Perimeters", // What the feature layer will show when in the toggle layers and legend
 
           // As feature layers are not returned with their original styling, we can add their styles here. This will also be what displays in the legend.
           style: {
@@ -54,6 +54,12 @@ const config = {
           featureSelection: {
             selectColor: "yellow", // Determines the color of the feature when clicked
             zoomToFeature: false, // Will zoom to the selected feature when clicked
+          },
+          legendName: "Fire Perimeters", // What the feature layer will show when in the toggle layers and legend
+          legendStyle: {
+            // Insert inner HTML style parameters as the value along with their proper css styling parameter names as the key.
+            background: "rgba(255, 0, 0, 0.4);",
+            border: "1.5px solid red",
           },
         },
         // Add more feature servers as needed
