@@ -1,4 +1,3 @@
-/*Legend specific*/
 if (config[hashtag].legendOn) {
   var legend = L.control({ position: "topright" });
 
