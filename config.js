@@ -62,6 +62,41 @@ const config = {
             border: "1.5px solid red",
           },
         },
+
+        personStartedFire: {
+          url: "https://services6.arcgis.com/ubm4tcTYICKBpist/ArcGIS/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0",
+          whereClause: "FIRE_CAUSE = 'Person'", // Add any criteria e.g. "FIRE_SIZE_HECTARES > 10000"
+
+          // As feature layers are not returned with their original styling, we can add their styles here. This will also be what displays in the legend.
+          style: {
+            radius: 6, // Adjust the size of the point
+            fillColor: "green", // Set the fill color to green
+            color: "green", // Set the outline color to green
+            weight: 1, // Set the outline weight
+            opacity: 1, // Set the opacity
+            fillOpacity: 0.8, // Set the fill opacity
+          },
+          // For the side panel these are the attributes that will be displayed along with their human-readable titles
+          attributes: {
+            FIRE_STATUS: "Fire Status",
+            FIRE_NUMBER: "Fire Number",
+            FIRE_SIZE_HECTARES: "Fire Size in Hectares",
+          },
+          attributeDetails: {
+            mapAll: true, // Set this to false if you only want the attributes you listed within the attributes {} hashmap to display. true will grab all attribute values.
+          },
+          featureSelection: {
+            selectColor: "yellow", // Determines the color of the feature when clicked
+            zoomToFeature: false, // Will zoom to the selected feature when clicked
+          },
+          legendName: "Person Caused Fires", // What the feature layer will show when in the toggle layers and legend
+          legendStyle: {
+            // Insert CSS styling parameters
+            background: "rgba(42, 0, 0, 0.4);",
+            border: "1.5px solid blue",
+          },
+        },
+
         // Add more feature servers as needed
       },
       //
