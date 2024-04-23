@@ -37,7 +37,7 @@ const config = {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
           whereClause: "FIRE_SIZE_HECTARES > 10000", // Add any criteria e.g. "FIRE_SIZE_HECTARES > 10000"
 
-          // As feature layers are not returned with their original styling, we can add their styles here. This will also be what displays in the legend.
+          // As feature layers are not returned with their original styling, we can add their styles here.
           style: {
             color: "#FF0000",
             weight: "1.0",
@@ -67,14 +67,12 @@ const config = {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/ArcGIS/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0",
           whereClause: "FIRE_CAUSE = 'Person'", // Add any criteria e.g. "FIRE_SIZE_HECTARES > 10000"
 
-          // As feature layers are not returned with their original styling, we can add their styles here. This will also be what displays in the legend.
+          // As feature layers are not returned with their original styling, we can add their styles here.
           style: {
-            radius: 6, // Adjust the size of the point
-            fillColor: "green", // Set the fill color to green
-            color: "green", // Set the outline color to green
-            weight: 1, // Set the outline weight
-            opacity: 1, // Set the opacity
-            fillOpacity: 0.8, // Set the fill opacity
+            iconUrl: "https://img.icons8.com/color/user",
+            iconSize: [27, 31],
+            iconAnchor: [13.5, 17.5],
+            popupAnchor: [0, -11],
           },
           // For the side panel these are the attributes that will be displayed along with their human-readable titles
           attributes: {
@@ -92,7 +90,7 @@ const config = {
           legendName: "Person Caused Fires", // What the feature layer will show when in the toggle layers and legend
           legendStyle: {
             // Insert CSS styling parameters
-            background: "rgba(42, 0, 0, 0.4);",
+            backgroundimage: "https://img.icons8.com/color/user;",
             border: "1.5px solid blue",
           },
         },

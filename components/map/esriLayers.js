@@ -12,6 +12,13 @@ function addEsriLayersToMap(map) {
     const endpoint = endpoints[endpointName];
     const captainKeys = Object.keys(endpoint);
 
+    const icon = L.icon({
+      iconUrl: "https://img.icons8.com/color/user",
+      iconSize: [27, 31],
+      iconAnchor: [13.5, 17.5],
+      popupAnchor: [0, -11],
+    });
+
     if (endpointName == "esriFeatureLayers") {
       captainKeys.forEach((key) => {
         const layer = endpoint[key];
@@ -20,6 +27,11 @@ function addEsriLayersToMap(map) {
             url: layer.url,
             style: layer.style,
             where: layer.whereClause,
+            pointToLayer: function (geojson, latlng) {
+              return L.marker(latlng, {
+                icon: L.icon(layer.style),
+              });
+            },
           })
           .addTo(map);
 
