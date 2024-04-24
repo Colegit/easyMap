@@ -26,20 +26,33 @@ if (config[hashtag].legendOn) {
 
     // Grab each layer from our constructed map and construct the html and styling for each one
     legendFinal.forEach((legendStyle, legendName) => {
+      // The html is different if its an icon. This checks if the type is set to icon in the config file
       // Convert our object value into a string so that we can insert it into our string html
       let styleString = "";
       for (const [key, value] of Object.entries(legendStyle)) {
-        styleString += `${key}: ${value}; `;
+        if (key !== "type") {
+          styleString += `${key}: ${value}; `;
+        }
       }
       styleString = '"' + styleString + '"';
 
-      // Construct our final html legend row
-      div.innerHTML +=
-        "<i style=" +
-        styleString +
-        '"></i><span> ' +
-        legendName +
-        "</span><br>";
+      if (!containsKeyValuePair(legendStyle, "type", "icon")) {
+        // Construct our final html legend row
+        div.innerHTML +=
+          "<i style=" +
+          styleString +
+          '"></i><span> ' +
+          legendName +
+          "</span><br>";
+      } else {
+        console.log(styleString);
+        div.innerHTML +=
+          '<i class="icon" style=' +
+          styleString +
+          "></i><span> " +
+          legendName +
+          "</span><br>";
+      }
     });
 
     div.innerHTML +=

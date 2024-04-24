@@ -89,9 +89,11 @@ const config = {
           },
           legendName: "Person Caused Fires", // What the feature layer will show when in the toggle layers and legend
           legendStyle: {
+            type: "icon", //If its an icon, you need to make sure this is here
             // Insert CSS styling parameters
-            backgroundimage: "https://img.icons8.com/color/user;",
-            border: "1.5px solid blue",
+            "background-image": "url(https://img.icons8.com/color/user)",
+            "background-repeat": "no-repeat",
+            //border: "1.5px solid blue",
           },
         },
 
@@ -100,13 +102,13 @@ const config = {
       //
       //
       //
-      esriMapLayers: {
-        albertaRegions: {
-          url: "https://geospatial.alberta.ca/titan/rest/services/transportation/transportation/MapServer",
-          layers: [0, 1, 2, 3], // Add the layers you want returned back from the map server
-        },
-        // Add more map servers as needed
-      },
+      // esriMapLayers: {
+      //   albertaRegions: {
+      //     url: "https://geospatial.alberta.ca/titan/rest/services/transportation/transportation/MapServer",
+      //     layers: [0, 1, 2, 3], // Add the layers you want returned back from the map server
+      //   },
+      //   // Add more map servers as needed
+      // },
     },
   },
   //
