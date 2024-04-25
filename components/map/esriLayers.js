@@ -28,9 +28,12 @@ function addEsriLayersToMap(map) {
             style: layer.style,
             where: layer.whereClause,
             pointToLayer: function (geojson, latlng) {
-              return L.marker(latlng, {
-                icon: L.icon(layer.style),
-              });
+              if (geojson.geometry.type === "Point") {
+                const leafletLatlng = [latlng.lat, latlng.lng];
+                return L.marker(leafletLatlng, {
+                  icon: L.icon(layer.style),
+                });
+              }
             },
           })
           .addTo(map);

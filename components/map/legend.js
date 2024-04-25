@@ -45,7 +45,6 @@ if (config[hashtag].legendOn) {
           legendName +
           "</span><br>";
       } else {
-        console.log(styleString);
         div.innerHTML +=
           '<i class="icon" style=' +
           styleString +
@@ -55,8 +54,8 @@ if (config[hashtag].legendOn) {
       }
     });
 
-    div.innerHTML +=
-      '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Grænse</span><br>';
+    // div.innerHTML +=
+    //   '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Grænse</span><br>';
 
     return div;
   };

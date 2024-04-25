@@ -55,7 +55,7 @@ const config = {
             selectColor: "yellow", // Determines the color of the feature when clicked
             zoomToFeature: false, // Will zoom to the selected feature when clicked
           },
-          legendName: "Fire Perimeters", // What the feature layer will show when in the toggle layers and legend
+          legendName: "Fire Perimeters (> 10000 Hectares)", // What the feature layer will show when in the toggle layers and legend
           legendStyle: {
             // Insert CSS styling parameters
             background: "rgba(255, 0, 0, 0.4);",
@@ -87,9 +87,9 @@ const config = {
             selectColor: "yellow", // Determines the color of the feature when clicked
             zoomToFeature: false, // Will zoom to the selected feature when clicked
           },
-          legendName: "Person Caused Fires", // What the feature layer will show when in the toggle layers and legend
+          legendName: "Human Caused Fires", // What the feature layer will show when in the toggle layers and legend
           legendStyle: {
-            type: "icon", //If its an icon, you need to make sure this is here
+            type: "icon", //If its an icon in the legend, you need to make sure this is here
             // Insert CSS styling parameters
             "background-image": "url(https://img.icons8.com/color/user)",
             "background-repeat": "no-repeat",
