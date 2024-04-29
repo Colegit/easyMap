@@ -44,6 +44,7 @@ if (config[hashtag].legendOn) {
           '"></i><span> ' +
           legendName +
           "</span><br>";
+        // Currently if its not a vector we are constructing, we assume we will add an icon.
       } else {
         div.innerHTML +=
           '<i class="icon" style=' +
