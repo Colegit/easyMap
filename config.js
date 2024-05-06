@@ -28,6 +28,9 @@ const config = {
     favicon: "assets/wildfires.png",
     legendTitle: "Legend",
     legendOn: true, // Turn legend on or off
+
+    // search bar
+    // https://www.youtube.com/watch?v=WnPcSGlh0eQ
     restEndpoints: {
       //
       // https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
