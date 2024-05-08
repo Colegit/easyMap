@@ -35,6 +35,7 @@ const config = {
       //
       // https://developers.arcgis.com/esri-leaflet/styles-and-data-visualization/style-a-feature-layer/
       //
+      //
       esriFeatureLayers: {
         firePerimeters: {
           url: "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/",
