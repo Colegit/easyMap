@@ -8,3 +8,5 @@ By design, users should never have to modify a line of javascript to get a basic
 - Toggle layers
 - Click layers to view attribute data
 - Grab current location
+
+The program is also multi-instance, allowing you to host multiple map instances and projects on a single deployment and manage them all from the one config file. 
