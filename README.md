@@ -1,6 +1,6 @@
 ## Introduction
 
-Built using platform oriented architecture principles, easyMap was constructed to allow small teams to quickly standup a web map with limited programming ability by allowing users to define everything they need from a single config file. 
+easyMap was constructed to allow small teams to quickly standup a basic web map with limited programming ability by allowing users to define everything they need from a single config file. 
 
 By design, users should never have to modify a line of javascript to get a basic web map up and running. From the single config file, users should be able to:
 
